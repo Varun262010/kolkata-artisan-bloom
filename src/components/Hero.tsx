@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Package, Users, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-artisan.jpg";
 
 const Hero = () => {
@@ -33,12 +34,16 @@ const Hero = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="xl" className="group">
-                  Shop Now
-                  <ArrowRight className="w-5 h-5 transition-smooth group-hover:translate-x-1" />
+                <Button variant="hero" size="xl" className="group" asChild>
+                  <Link to="/shop">
+                    Shop Now
+                    <ArrowRight className="w-5 h-5 transition-smooth group-hover:translate-x-1" />
+                  </Link>
                 </Button>
-                <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20">
-                  Become a Seller
+                <Button variant="outline" size="xl" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20" asChild>
+                  <Link to="/sell">
+                    Become a Seller
+                  </Link>
                 </Button>
               </div>
             </div>

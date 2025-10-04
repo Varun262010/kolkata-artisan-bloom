@@ -59,12 +59,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
                   Seller Dashboard
                 </Link>
               </li>
               <li>
-                <Link to="/guidelines" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
                   Seller Guidelines
                 </Link>
               </li>
@@ -75,18 +75,18 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Connect With Us</h4>
             <div className="flex gap-3 mb-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
+              <Link to="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
+              </Link>
+              <Link to="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
+              </Link>
+              <Link to="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
                 <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
+              </Link>
+              <Link to="#" className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-smooth flex items-center justify-center">
                 <Mail className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
             <p className="text-sm text-muted-foreground">
               Email: hello@artisanconnect.in<br />
@@ -101,10 +101,10 @@ const Footer = () => {
             © 2024 Artisan Connect. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
+            <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
+            <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
               Terms of Service
             </Link>
           </div>
