@@ -1,42 +1,31 @@
 import { Card } from "@/components/ui/card";
 import { Palette, Shirt, Gem, TreePine, Package, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
-    name: "Paintings",
+    name: "Art",
     icon: Palette,
-    count: 150,
+    count: 25,
     color: "from-orange-500 to-red-500",
   },
   {
-    name: "Handloom",
+    name: "Textiles",
     icon: Shirt,
-    count: 220,
+    count: 25,
     color: "from-purple-500 to-pink-500",
   },
   {
     name: "Jewelry",
     icon: Gem,
-    count: 180,
+    count: 30,
     color: "from-amber-500 to-yellow-500",
   },
   {
     name: "Pottery",
     icon: TreePine,
-    count: 95,
+    count: 20,
     color: "from-emerald-500 to-teal-500",
-  },
-  {
-    name: "Handicrafts",
-    icon: Package,
-    count: 310,
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    name: "Eco Products",
-    icon: Sparkles,
-    count: 125,
-    color: "from-green-500 to-lime-500",
   },
 ];
 
@@ -57,18 +46,22 @@ const Categories = () => {
           {categories.map((category) => {
             const Icon = category.icon;
             return (
-              <Card
+              <Link
                 key={category.name}
-                className="group p-6 text-center cursor-pointer border-border hover:shadow-large transition-slow hover:-translate-y-1"
+                to={`/shop?category=${category.name.toLowerCase()}`}
               >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} mx-auto mb-4 flex items-center justify-center transition-slow group-hover:scale-110`}>
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-smooth">
-                  {category.name}
-                </h3>
-                <p className="text-sm text-muted-foreground">{category.count} items</p>
-              </Card>
+                <Card
+                  className="group p-6 text-center cursor-pointer border-border hover:shadow-large transition-slow hover:-translate-y-1"
+                >
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} mx-auto mb-4 flex items-center justify-center transition-slow group-hover:scale-110`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-smooth">
+                    {category.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{category.count} items</p>
+                </Card>
+              </Link>
             );
           })}
         </div>

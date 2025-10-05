@@ -1,8 +1,8 @@
 import ProductCard from "./ProductCard";
-import productTerracotta from "@/assets/product-terracotta.jpg";
-import productHandloom from "@/assets/product-handloom.jpg";
-import productPainting from "@/assets/product-painting.jpg";
-import productJewelry from "@/assets/product-jewelry.jpg";
+import terracottaVase from "@/assets/terracotta-vase.jpg";
+import silkSaree from "@/assets/silk-saree.jpg";
+import patachitra from "@/assets/patachitra-art.jpg";
+import dokraJewelry from "@/assets/dokra-jewelry.jpg";
 
 const products = [
   {
@@ -10,7 +10,7 @@ const products = [
     name: "Bishnupur Terracotta Vase",
     price: 1200,
     artist: "Ranjan Das",
-    image: productTerracotta,
+    image: terracottaVase,
     category: "Pottery",
   },
   {
@@ -18,7 +18,7 @@ const products = [
     name: "Handloom Silk Saree",
     price: 8500,
     artist: "Meera Banerjee",
-    image: productHandloom,
+    image: silkSaree,
     category: "Textiles",
   },
   {
@@ -26,7 +26,7 @@ const products = [
     name: "Patachitra Folk Art Scroll",
     price: 3500,
     artist: "Sunil Chitrakar",
-    image: productPainting,
+    image: patachitra,
     category: "Art",
   },
   {
@@ -34,7 +34,7 @@ const products = [
     name: "Dokra Metal Jewelry Set",
     price: 2800,
     artist: "Kalpana Karmakar",
-    image: productJewelry,
+    image: dokraJewelry,
     category: "Jewelry",
   },
 ];
