@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
 
 interface ProductCardProps {
   id: string;
@@ -11,7 +13,15 @@ interface ProductCardProps {
   category: string;
 }
 
-const ProductCard = ({ name, price, artist, image, category }: ProductCardProps) => {
+const ProductCard = ({ id, name, price, artist, image, category }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, price, image });
+    toast.success(`${name} added to cart!`);
+    window.dispatchEvent(new Event("open-cart"));
+  };
+
   return (
     <Card className="group overflow-hidden border-border hover:shadow-large transition-slow cursor-pointer">
       <div className="relative aspect-square overflow-hidden bg-muted">
@@ -40,7 +50,7 @@ const ProductCard = ({ name, price, artist, image, category }: ProductCardProps)
         
         <div className="flex items-center justify-between">
           <span className="text-xl font-bold text-primary">₹{price.toLocaleString()}</span>
-          <Button size="sm" className="gap-2">
+          <Button size="sm" className="gap-2" onClick={handleAddToCart}>
             <ShoppingCart className="w-4 h-4" />
             Add
           </Button>
