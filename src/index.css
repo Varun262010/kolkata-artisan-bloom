@@ -8,54 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Artisan Connect - Earthy, Cultural Design System */
-    --background: 35 40% 96%;
-    --foreground: 25 35% 20%;
+    /* HaathSe - Premium Handcraft Design System */
+    --background: 30 25% 98%;
+    --foreground: 20 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 35% 20%;
+    --card-foreground: 20 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 35% 20%;
+    --popover-foreground: 20 15% 15%;
 
-    /* Terracotta Red - Primary Brand Color */
-    --primary: 12 76% 55%;
+    /* Rich Terracotta - Primary Brand Color */
+    --primary: 18 85% 52%;
     --primary-foreground: 0 0% 100%;
+    --primary-hover: 18 85% 42%;
 
-    /* Forest Green - Eco-Friendly */
-    --secondary: 145 40% 35%;
+    /* Deep Teal - Artisan Heritage */
+    --secondary: 180 40% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Warm Cream */
-    --muted: 35 30% 90%;
-    --muted-foreground: 25 20% 45%;
+    /* Soft Beige */
+    --muted: 30 20% 93%;
+    --muted-foreground: 20 10% 50%;
 
-    /* Gold Accent */
-    --accent: 45 85% 55%;
-    --accent-foreground: 25 35% 20%;
+    /* Warm Gold Accent */
+    --accent: 42 95% 60%;
+    --accent-foreground: 20 15% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 25% 85%;
-    --input: 35 25% 85%;
-    --ring: 12 76% 55%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 18 85% 52%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Custom Gradient Variables */
-    --gradient-hero: linear-gradient(135deg, hsl(12 76% 55%) 0%, hsl(25 85% 50%) 100%);
-    --gradient-eco: linear-gradient(135deg, hsl(145 40% 35%) 0%, hsl(145 50% 45%) 100%);
-    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    /* Enhanced Gradient Variables */
+    --gradient-hero: linear-gradient(135deg, hsl(18 85% 52%) 0%, hsl(25 90% 55%) 50%, hsl(42 95% 60%) 100%);
+    --gradient-eco: linear-gradient(135deg, hsl(145 50% 40%) 0%, hsl(180 40% 40%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(30 25% 98%) 100%);
+    --gradient-shimmer: linear-gradient(90deg, transparent 0%, hsl(42 95% 60% / 0.3) 50%, transparent 100%);
     
     /* Animation Variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     /* Shadow Variables */
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --shadow-soft: 0 2px 12px rgba(18, 85, 52, 0.06);
+    --shadow-medium: 0 4px 24px rgba(18, 85, 52, 0.1);
+    --shadow-large: 0 12px 48px rgba(18, 85, 52, 0.15);
+    --shadow-glow: 0 0 24px rgba(42, 95, 60, 0.4);
   }
 
   .dark {
@@ -96,15 +101,18 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "kern" 1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    @apply font-serif;
+    font-family: 'Playfair Display', Georgia, serif;
     letter-spacing: -0.02em;
+    font-weight: 600;
   }
 }
 
@@ -120,6 +128,10 @@ All colors MUST be HSL.
   .gradient-overlay {
     background: var(--gradient-overlay);
   }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
   
   .transition-smooth {
     transition: var(--transition-smooth);
@@ -127,6 +139,10 @@ All colors MUST be HSL.
   
   .transition-slow {
     transition: var(--transition-slow);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
   }
   
   .shadow-soft {
@@ -139,5 +155,17 @@ All colors MUST be HSL.
   
   .shadow-large {
     box-shadow: var(--shadow-large);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-lift {
+    @apply transition-slow hover:-translate-y-2 hover:shadow-large;
+  }
+
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
   }
 }

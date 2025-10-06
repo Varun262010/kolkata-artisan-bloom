@@ -8,6 +8,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import Artists from "./pages/Artists";
+import ArtistProfile from "./pages/ArtistProfile";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Sell from "./pages/Sell";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/artists" element={<Artists />} />
+            <Route path="/artists/:id" element={<ArtistProfile />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sell" element={<Sell />} />
