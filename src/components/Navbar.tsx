@@ -22,8 +22,8 @@ const Navbar = () => {
               <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Artisan Connect</h1>
-              <p className="text-xs text-muted-foreground">Kolkata's Artists</p>
+              <h1 className="text-xl font-bold text-foreground">HaathSe</h1>
+              <p className="text-xs text-muted-foreground">Handcrafted with Love</p>
             </div>
           </Link>
 
@@ -48,8 +48,10 @@ const Navbar = () => {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="w-5 h-5" />
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/profile">
+                <User className="w-5 h-5" />
+              </Link>
             </Button>
             <Button variant="ghost" size="icon" className="relative" onClick={openCart}>
               <ShoppingCart className="w-5 h-5" />

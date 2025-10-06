@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Palette, Shirt, Gem, TreePine, Package, Sparkles } from "lucide-react";
+import { Palette, Shirt, Gem, TreePine, Home, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const categories = [
@@ -26,6 +26,18 @@ const categories = [
     icon: TreePine,
     count: 20,
     color: "from-emerald-500 to-teal-500",
+  },
+  {
+    name: "Home Decor",
+    icon: Home,
+    count: 50,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    name: "Accessories",
+    icon: ShoppingBag,
+    count: 50,
+    color: "from-pink-500 to-rose-500",
   },
 ];
 

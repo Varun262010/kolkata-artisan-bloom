@@ -25,7 +25,7 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Connecting Kolkata's<br />Artists to the World
+                Handcrafted with Love<br />by Kolkata's Finest Artisans
               </h1>
               
               <p className="text-lg md:text-xl mb-8 text-white/90">
