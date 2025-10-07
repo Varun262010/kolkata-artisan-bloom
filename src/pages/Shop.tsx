@@ -29,6 +29,36 @@ import leatherSandals from "@/assets/leather-sandals.jpg";
 import teaSet from "@/assets/tea-set.jpg";
 import bambooMirror from "@/assets/bamboo-mirror.jpg";
 import silkDupatta from "@/assets/silk-dupatta.jpg";
+import bluePottery from "@/assets/blue-pottery.jpg";
+import pashminaShawl from "@/assets/pashmina-shawl.jpg";
+import bambooBasket from "@/assets/bamboo-basket.jpg";
+import bronzeIdol from "@/assets/bronze-idol.jpg";
+import miniaturePainting from "@/assets/miniature-painting.jpg";
+import coirMat from "@/assets/coir-mat.jpg";
+import bidriwareVase from "@/assets/bidriware-vase.jpg";
+import bandhaniSaree from "@/assets/bandhani-saree.jpg";
+import woodenToy from "@/assets/wooden-toy.jpg";
+import gondArt from "@/assets/gond-art.jpg";
+import pattachitraOdisha from "@/assets/pattachitra-odisha.jpg";
+import nagaShawl from "@/assets/naga-shawl.jpg";
+import phulkariDupatta from "@/assets/phulkari-dupatta.jpg";
+import kulluShawl from "@/assets/kullu-shawl.jpg";
+import kondapalliToy from "@/assets/kondapalli-toy.jpg";
+import chikankariKurta from "@/assets/chikankari-kurta.jpg";
+import manipuriPottery from "@/assets/manipuri-pottery.jpg";
+import kolhapuriChappal from "@/assets/kolhapuri-chappal.jpg";
+import tanjorePainting from "@/assets/tanjore-painting.jpg";
+import silverFiligree from "@/assets/silver-filigree.jpg";
+import goanTiles from "@/assets/goan-tiles.jpg";
+import mojariShoes from "@/assets/mojari-shoes.jpg";
+import caneFurniture from "@/assets/cane-furniture.jpg";
+import sandalwoodCarving from "@/assets/sandalwood-carving.jpg";
+import bambooTray from "@/assets/bamboo-tray.jpg";
+import madhubaniArt from "@/assets/madhubani-art.jpg";
+import phulkariRunner from "@/assets/phulkari-runner.jpg";
+import caneBasket from "@/assets/cane-basket.jpg";
+import dhokraLamp from "@/assets/dhokra-lamp.jpg";
+import nirmalToy from "@/assets/nirmal-toy.jpg";
 
 const products = [
   // Pottery & Terracotta (20 items)
