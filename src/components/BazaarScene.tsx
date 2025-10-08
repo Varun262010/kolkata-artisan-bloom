@@ -86,6 +86,7 @@ export const BazaarScene = () => {
           rotation={category.rotation}
           onClick={() => setSelectedStall(category.id)}
           label={category.name}
+          categoryId={category.id}
         />
       ))}
 

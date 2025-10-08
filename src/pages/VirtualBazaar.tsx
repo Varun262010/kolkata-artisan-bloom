@@ -4,6 +4,7 @@ import { OrbitControls, PerspectiveCamera, Html } from "@react-three/drei";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BazaarScene } from "@/components/BazaarScene";
+import ArtisanMap from "@/components/ArtisanMap";
 import { Loader2 } from "lucide-react";
 
 const VirtualBazaar = () => {
@@ -54,6 +55,16 @@ const VirtualBazaar = () => {
           <div className="p-4 bg-card rounded-lg border">
             <h3 className="font-semibold mb-2">🛍️ Shop Direct</h3>
             <p className="text-sm text-muted-foreground">Click on products within stalls to add them to your cart instantly</p>
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-3xl font-serif mb-4 text-center">Artisan Locations</h2>
+          <p className="text-muted-foreground text-center mb-6">
+            Discover where our talented artisans create their crafts across India
+          </p>
+          <div className="w-full h-[500px] rounded-lg overflow-hidden border shadow-soft">
+            <ArtisanMap />
           </div>
         </div>
       </main>

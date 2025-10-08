@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { getCategoryProducts } from "@/data/products";
 
 interface StallProps {
   position: [number, number, number];
@@ -9,11 +10,13 @@ interface StallProps {
   rotation?: number;
   onClick: () => void;
   label: string;
+  categoryId: string;
 }
 
-export const Stall = ({ position, color, rotation = 0, onClick, label }: StallProps) => {
+export const Stall = ({ position, color, rotation = 0, onClick, label, categoryId }: StallProps) => {
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
+  const products = getCategoryProducts(categoryId).slice(0, 3); // Get first 3 products
 
   useFrame(() => {
     if (meshRef.current && hovered) {
@@ -59,6 +62,24 @@ export const Stall = ({ position, color, rotation = 0, onClick, label }: StallPr
           <meshStandardMaterial color="#8b4513" />
         </mesh>
       ))}
+
+      {/* Product Display Planes */}
+      {products.map((product, i) => {
+        const xOffset = (i - 1) * 0.8;
+        return (
+          <mesh 
+            key={product.id} 
+            position={[xOffset, 0.8, 0]} 
+            rotation={[0, 0, 0]}
+          >
+            <planeGeometry args={[0.6, 0.6]} />
+            <meshStandardMaterial 
+              map={new THREE.TextureLoader().load(product.image)}
+              transparent
+            />
+          </mesh>
+        );
+      })}
 
       {/* Label */}
       <Html position={[0, 4, 0]} center>
