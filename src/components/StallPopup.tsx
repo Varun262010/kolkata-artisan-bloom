@@ -3,58 +3,12 @@ import { X, ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { useCart } from "@/context/CartContext";
 import { toast } from "sonner";
-
-// Import product images
-import productTerracotta from "@/assets/product-terracotta.jpg";
-import silkSaree from "@/assets/silk-saree.jpg";
-import patachitra from "@/assets/patachitra-art.jpg";
-import dokraJewelry from "@/assets/dokra-jewelry.jpg";
-import woodenDecor from "@/assets/wooden-decor.jpg";
-import bambooMirror from "@/assets/bamboo-mirror.jpg";
+import { getCategoryProducts } from "@/data/products";
 
 interface StallPopupProps {
   category: string;
   onClose: () => void;
 }
-
-const categoryProducts: Record<string, Array<{id: string, name: string, price: number, artist: string, image: string}>> = {
-  pottery: [
-    { id: "1", name: "Bishnupur Terracotta Vase", price: 1200, artist: "Ranjan Das", image: productTerracotta },
-    { id: "2", name: "Clay Diya Set (12 pieces)", price: 450, artist: "Ranjan Das", image: productTerracotta },
-    { id: "3", name: "Terracotta Wall Hanging", price: 850, artist: "Gopal Pal", image: productTerracotta },
-    { id: "4", name: "Handcrafted Clay Kulhad Set", price: 380, artist: "Ranjan Das", image: productTerracotta },
-  ],
-  textiles: [
-    { id: "21", name: "Handloom Silk Saree", price: 8500, artist: "Meera Banerjee", image: silkSaree },
-    { id: "22", name: "Cotton Handloom Kurta", price: 2200, artist: "Meera Banerjee", image: silkSaree },
-    { id: "23", name: "Kantha Embroidered Dupatta", price: 1850, artist: "Anjali Mondal", image: silkSaree },
-    { id: "24", name: "Jamdani Cotton Saree", price: 6800, artist: "Meera Banerjee", image: silkSaree },
-  ],
-  paintings: [
-    { id: "51", name: "Patachitra Painting", price: 5500, artist: "Gopal Chitrakar", image: patachitra },
-    { id: "52", name: "Kalighat Art Portrait", price: 4200, artist: "Gopal Chitrakar", image: patachitra },
-    { id: "53", name: "Madhubani Art Piece", price: 3800, artist: "Lalita Devi", image: patachitra },
-    { id: "54", name: "Traditional Folk Art", price: 2900, artist: "Gopal Chitrakar", image: patachitra },
-  ],
-  jewelry: [
-    { id: "71", name: "Dokra Jewelry Set", price: 2800, artist: "Samir Das", image: dokraJewelry },
-    { id: "72", name: "Brass Bangles Pair", price: 1500, artist: "Samir Das", image: dokraJewelry },
-    { id: "73", name: "Silver Tribal Necklace", price: 4500, artist: "Radha Devi", image: dokraJewelry },
-    { id: "74", name: "Handcrafted Earrings", price: 980, artist: "Samir Das", image: dokraJewelry },
-  ],
-  home: [
-    { id: "91", name: "Wooden Wall Decor", price: 3200, artist: "Bikash Sutradhar", image: woodenDecor },
-    { id: "92", name: "Brass Home Lamp", price: 2800, artist: "Anil Kumar", image: woodenDecor },
-    { id: "93", name: "Bamboo Mirror Frame", price: 1850, artist: "Bikash Sutradhar", image: bambooMirror },
-    { id: "94", name: "Decorative Pot", price: 1200, artist: "Minati Kumari", image: woodenDecor },
-  ],
-  accessories: [
-    { id: "111", name: "Jute Shoulder Bag", price: 850, artist: "Preeti Ghosh", image: woodenDecor },
-    { id: "112", name: "Leather Sandals", price: 1800, artist: "Ramesh Yadav", image: woodenDecor },
-    { id: "113", name: "Handwoven Scarf", price: 1200, artist: "Anjali Mondal", image: silkSaree },
-    { id: "114", name: "Bamboo Tray Set", price: 680, artist: "Bikash Sutradhar", image: bambooMirror },
-  ],
-};
 
 const categoryNames: Record<string, string> = {
   pottery: "Pottery & Terracotta",
@@ -66,7 +20,7 @@ const categoryNames: Record<string, string> = {
 };
 
 export const StallPopup = ({ category, onClose }: StallPopupProps) => {
-  const products = categoryProducts[category] || [];
+  const products = getCategoryProducts(category);
   const { addToCart } = useCart();
 
   useEffect(() => {

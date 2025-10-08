@@ -38,6 +38,9 @@ const Navbar = () => {
             <Link to="/virtual-bazaar" className="text-foreground hover:text-primary transition-smooth font-medium">
               Virtual Bazaar
             </Link>
+            <Link to="/recommendations" className="text-foreground hover:text-primary transition-smooth font-medium">
+              AI Recommendations
+            </Link>
             <Link to="/artists" className="text-foreground hover:text-primary transition-smooth font-medium">
               Artists
             </Link>
