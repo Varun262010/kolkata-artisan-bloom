@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Environment, Html } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Html } from "@react-three/drei";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BazaarScene } from "@/components/BazaarScene";
@@ -37,7 +37,6 @@ const VirtualBazaar = () => {
                 maxDistance={30}
                 maxPolarAngle={Math.PI / 2.2}
               />
-              <Environment preset="sunset" />
               <BazaarScene />
             </Suspense>
           </Canvas>

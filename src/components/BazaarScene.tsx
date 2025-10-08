@@ -91,11 +91,11 @@ export const BazaarScene = () => {
 
       {/* Central fountain/decoration */}
       <mesh position={[0, 1, 0]} castShadow>
-        <cylinderGeometry args={[1.5, 2, 2, 8]} />
+        <cylinderGeometry args={[1.5, 2, 2, 16]} />
         <meshStandardMaterial color="#94a3b8" />
       </mesh>
       <mesh position={[0, 2.5, 0]} castShadow>
-        <sphereGeometry args={[0.8, 16, 16]} />
+        <sphereGeometry args={[0.8, 32, 32]} />
         <meshStandardMaterial color="#60a5fa" emissive="#3b82f6" emissiveIntensity={0.2} />
       </mesh>
 

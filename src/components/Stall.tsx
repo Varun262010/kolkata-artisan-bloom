@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Text, Html } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
